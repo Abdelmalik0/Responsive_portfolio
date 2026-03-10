@@ -1,0 +1,155 @@
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-light);
+}
+
+h1 { font-size: clamp(4.8rem, 8vw, 11rem); }
+h2 { font-size: clamp(3.2rem, 5vw, 6rem); }
+h3 { font-size: clamp(2.4rem, 3vw, 3.6rem); }
+
+a { color: inherit; }
+
+/* Section base — NO min-height, NO flex centering (each section handles its own layout) */
+.section {
+  padding: 0 var(--container-padding);
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+/* Glass Card — NO padding here, each card sets its own */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 2rem;
+  box-shadow: var(--glass-shadow);
+}
+
+/* Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  transform-origin: 0%;
+  z-index: var(--z-sticky);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 3.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+}
+
+.btn-primary:hover {
+  background: #c9a430;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
+  color: var(--text-light);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Utility */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--primary-dark); }
+::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-gold); }
+
+::selection {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  :root { --container-padding: 4rem; }
+}
+
+@media (max-width: 768px) {
+  :root { --container-padding: 2.4rem; }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 55%; }
+  :root { --container-padding: 1.6rem; }
+}
+
+/* Smooth scroll with Lenis */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }

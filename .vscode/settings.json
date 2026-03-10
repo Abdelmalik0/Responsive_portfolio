@@ -1,0 +1,6 @@
+{
+    "powerquery.client.additionalSymbolsDirectories": [
+        "c:/Users/PC/Desktop/Web Dev/fixed/.vscode/excel-pq-symbols",
+        "c:/Users/PC/Desktop/Web Dev/Responsive_Portfolio/.vscode/excel-pq-symbols"
+    ]
+}
