@@ -24,9 +24,9 @@ const contactReasons = [
 ];
 
 const contactInfo = [
-  { label: `Email`, value: `ethan@evoss.co`, href: `mailto:ethan@evoss.co`, icon: `◉` },
-  { label: `LinkedIn`, value: `linkedin.com/in/ethanvoss`, href: `#`, icon: `◈` },
-  { label: `Twitter / X`, value: `@ethanvoss`, href: `#`, icon: `◇` },
+  { label: `Email`, value: `abdulmalikabdulmalik141@gmail.com`, href: `mailto:abdulmalikabdulmalik141@gmail.com`, icon: `◉` },
+  { label: `LinkedIn`, value: `linkedin.com/in/abdulmalik-abdulmalik-aba018260/`, href: `linkedin.com/in/abdulmalik-abdulmalik-aba018260/`, icon: `◈` },
+  { label: `Twitter / X`, value: `Abdulmalik`, href: `https://x.com/Abdulma95908475`, icon: `◇` },
 ];
 
 function SectionLabel({ children }) {
